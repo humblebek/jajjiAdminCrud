@@ -4,10 +4,10 @@
 @section('content')
 <div class="jStart">
     <div class="formcard">
-        <button><a href={{route('Tindex')}}>Back</a></button>
+        <button><a href={{route('admin.teachers.index')}}>Back</a></button>
         <h1>Edit Teachers</h1>
 
-        <form action="/admin/teachers/update/{{$teachers->id}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.groups.update',$teachers->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

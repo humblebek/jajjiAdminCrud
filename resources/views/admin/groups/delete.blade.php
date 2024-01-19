@@ -3,6 +3,6 @@
 @section('content')
 
 <h1>Bu Achievments delete</h1>
-<button><a href={{route('Gindex')}}>Back</a></button>
+<button><a href={{route('admin.groups.index')}}>Back</a></button>
 @endsection
 

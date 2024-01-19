@@ -6,9 +6,9 @@
 @section('content')
 <div class="jStart">
 <div class="formcard">
-    <button><a href={{route('Gindex')}}>Back</a></button>
+    <button><a href={{route('admin.groups.index')}}>Back</a></button>
     <h1>Add a new achievments</h1>
-    <form action={{route('Gstore')}} method="POST" >
+    <form action={{route('admin.groups.store')}} method="POST" >
         @csrf
         <div>
             <p>Image:</p>

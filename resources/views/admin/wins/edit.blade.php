@@ -4,10 +4,10 @@
 @section('content')
 <div class="jStart">
     <div class="formcard">
-        <button><a href={{route('index')}}>Back</a></button>
+        <button><a href={{route('admin.wins.index')}}>Back</a></button>
         <h1>Edit wins</h1>
 
-        <form action="/admin/wins/update/{{$win->id}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.wins.update',$win->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

@@ -10,7 +10,7 @@
         <div class="order">
             <div class="head">
                 <h3>Groups</h3>
-                <button><a href={{route('Gcreate')}}>Add</a></button>
+                <button><a href={{route('admin.groups.create')}}>Add</a></button>
                 <i class='bx bx-search'></i>
                 <i class='bx bx-filter'></i>
             </div>
@@ -42,12 +42,12 @@
 
                         <td style="display: flex">
 
-                            <button style="background-color: green;"><a class="btn btn-succes" href="/admin/groups/show/{{$item->id}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
-                            <button><a class="btn btn-primary" href="/admin/groups/edit/{{$item->id}}"> <ion-icon name = "create-outline"></ion-icon></a></button>
-                            <form action="/admin/groups/delete/{{$item->id}}" method="POST">
+                            <button style="background-color: green;"><a class="btn btn-succes" href="{{route('admin.groups.show',$item->id)}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                            <button><a class="btn btn-primary" href="{{route('admin.groups.edit',$item->id)}}"> <ion-icon name = "create-outline"></ion-icon></a></button>
+                            <form action="{{route('admin.groups.destroy',$item->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="/admin/groups/delete/{{$item->id}}"> <ion-icon name = "trash-outline"></ion-icon></a></button>
+                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="{{route('admin.groups.destroy',$item->id)}}"> <ion-icon name = "trash-outline"></ion-icon></a></button>
                             </form>
 
 

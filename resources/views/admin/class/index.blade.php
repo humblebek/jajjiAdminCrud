@@ -35,11 +35,11 @@
 
                         <td style="display: flex">
 
-                            <button style="background-color: green;"><a class="btn btn-succes" href="/admin/class/show/{{$item->id}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
-                            <form action="/admin/class/delete/{{$item->id}}" method="POST">
+                            <button style="background-color: green;"><a class="btn btn-succes" href="{{route('admin.class.show',$item->id)}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                            <form action="{{route('admin.class.destroy',$item->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="/admin/class/delete{{$item->id}}"> <ion-icon name = "trash-outline"></ion-icon></a></button>
+                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="{{route('admin.class.destroy',$item->id)}}"> <ion-icon name = "trash-outline"></ion-icon></a></button>
                             </form>
 
 

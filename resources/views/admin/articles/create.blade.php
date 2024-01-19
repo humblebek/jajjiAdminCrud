@@ -6,12 +6,12 @@
 @section('content')
 <div class="jStart">
 <div class="formcard">
-    <button><a href={{route('Aindex')}}>Back</a></button>
+    <button><a href={{route('admin.articles.index')}}>Back</a></button>
     <h1>Add a new articles</h1>
-    <form action={{route('Astore')}} method="POST" >
+    <form action={{route('admin.articles.store')}} method="POST" >
         @csrf
         <div>
-            <p>Image:</p>
+            <p>Photo:</p>
             <input type="text" name="imgA" placeholder="Name of image..."><br>
         </div>
         <div>
@@ -23,7 +23,7 @@
             <input type="text" name="messageA" placeholder="You can write smth here..."><br>
         </div>
         <div>
-            <p>Age:</p>
+            <p>Article owner:</p>
             <input type="text" name="articleOwnerA" placeholder="John Doe..."><br>
         </div>
 

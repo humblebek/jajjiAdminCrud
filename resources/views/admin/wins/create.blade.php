@@ -6,9 +6,9 @@
 @section('content')
 <div class="jStart">
 <div class="formcard">
-    <button><a href={{route('index')}}>Back</a></button>
+    <button><a href={{route('admin.wins.index')}}>Back</a></button>
     <h1>Add a new wins</h1>
-    <form action={{route('store')}} method="POST" >
+    <form action={{route('admin.wins.store')}} method="POST" >
         @csrf
         <div>
             <p>Image:</p>

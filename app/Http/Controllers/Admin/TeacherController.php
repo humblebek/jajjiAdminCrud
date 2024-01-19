@@ -33,7 +33,7 @@ class TeacherController extends Controller
             'instagram'=>$request->instagram,
          ]);
 
-         return redirect()->route('Tindex');
+         return redirect()->route('admin.teachers.index');
      }
 
      public function edit($id){
@@ -52,14 +52,14 @@ class TeacherController extends Controller
             'instagram'=>$request->instagram,
          ]);
 
-         return redirect()->route('Tindex');
+         return redirect()->route('admin.teachersindex');
      }
 
 
      public function destroy($id){
          DB::table('teachers')->where("id","=",$id)->delete();
 
-         return redirect()->route('Tindex');
+         return redirect()->route('admin.teachersindex');
 
      }
 }

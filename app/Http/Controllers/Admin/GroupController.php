@@ -33,7 +33,7 @@ class GroupController extends Controller
             'tutionFee'=>$request->tutionFeeG,
          ]);
 
-         return redirect()->route('Gindex');
+         return redirect()->route('admin.groups.index');
      }
 
      public function edit($id){
@@ -52,14 +52,14 @@ class GroupController extends Controller
              'tutionFee'=>$request->tutionFeeG,
          ]);
 
-         return redirect()->route('Gindex');
+         return redirect()->route('admin.groups.index');
      }
 
 
      public function destroy($id){
          DB::table('groups')->where("id","=",$id)->delete();
 
-         return redirect()->route('Gindex');
+         return redirect()->route('admin.groups.index');
 
      }
 }

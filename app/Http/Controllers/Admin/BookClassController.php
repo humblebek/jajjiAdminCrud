@@ -36,7 +36,7 @@ class BookClassController extends Controller
      public function destroy($id){
          DB::table('book_clasess')->where("id","=",$id)->delete();
 
-         return redirect()->route('Cindex');
+         return redirect()->route('admin.class.index');
 
      }
 }

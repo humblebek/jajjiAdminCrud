@@ -11,7 +11,7 @@
         <div class="order">
             <div class="head">
                 <h3>Wins About</h3>
-                <button><a href={{route('index')}}>Back</a></button>
+                <button><a href={{route('admin.wins.index')}}>Back</a></button>
                 <i class='bx bx-search'></i>
                 <i class='bx bx-filter'></i>
             </div>

@@ -10,7 +10,7 @@
         <div class="order">
             <div class="head">
                 <h3>Articles</h3>
-                <button><a href={{route('Acreate')}}>Add</a></button>
+                <button><a href={{route('admin.articles.create')}}>Add</a></button>
                 <i class='bx bx-search'></i>
                 <i class='bx bx-filter'></i>
             </div>
@@ -39,9 +39,9 @@
 
                         <td style="display: flex">
 
-                            <button style="background-color: green;"><a class="btn btn-succes" href="/admin/articles/show/{{$item->id}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
-                            <button><a class="btn btn-primary" href="/admin/articles/edit/{{$item->id}}"> <ion-icon name = "create-outline"></ion-icon></a></button>
-                            <form action="/admin/articles/delete/{{$item->id}}" method="POST">
+                            <button style="background-color: green;"><a class="btn btn-succes" href="{{route('admin.articles.show',$item->id)}}"> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                            <button><a class="btn btn-primary" href="{{route('admin.articles.edit',$item->id)}}"> <ion-icon name = "create-outline"></ion-icon></a></button>
+                            <form action="{{route('admin.articles.destroy',$item->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="/admin/articles/delete/{{$item->id}}"> <ion-icon name = "trash-outline"></ion-icon></a></button>

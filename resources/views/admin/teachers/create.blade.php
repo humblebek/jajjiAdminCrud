@@ -6,9 +6,9 @@
 @section('content')
 <div class="jStart">
 <div class="formcard">
-    <button><a href={{route('Tindex')}}>Back</a></button>
+    <button><a href={{route('admin.teachers.index')}}>Back</a></button>
     <h1>Add a new teachers</h1>
-    <form action={{route('Tstore')}} method="POST" >
+    <form action={{route('admin.teachers.store')}} method="POST" >
         @csrf
         <div>
             <p>Name:</p>

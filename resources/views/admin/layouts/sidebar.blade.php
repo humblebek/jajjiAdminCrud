@@ -5,37 +5,37 @@
 	</a>
 	<ul class="side-menu top">
 		<li class="active">
-			<a href={{route('adminMain')}}>
+			<a href={{route('admin.dashboard')}}>
 				<i class='bx bxs-dashboard'></i>
 				<span class="text">Dashboard</span>
 			</a>
 		</li>
 		<li>
-			<a href={{route('Gindex')}}>
+			<a href={{route('admin.groups.index')}}>
 				<i class='bx bxs-shopping-bag-alt'></i>
 				<span class="text">Groups</span>
 			</a>
 		</li>
 		<li>
-			<a href={{route('Tindex')}}>
+			<a href={{route('admin.teachers.index')}}>
 				<i class='bx bxs-group'></i>
 				<span class="text">Teachers</span>
 			</a>
 		</li>
 		<li>
-			<a href={{route('Aindex')}}>
+			<a href={{route('admin.articles.index')}}>
 				<i class='bx bxs-card'></i>
 				<span class="text">Articles</span>
 			</a>
 		</li>
 		<li>
-			<a href={{route('index')}}>
+			<a href={{route('admin.wins.index')}}>
 				<i class='bx bxs-award'></i>
 				<span class="text">Wins</span>
 			</a>
 		</li>
 		<li>
-			<a href={{route('Cindex')}}>
+			<a href={{route('admin.class.index')}}>
 				<i class='bx bxs-book'></i>
 				<span class="text">Book a class</span>
 			</a>

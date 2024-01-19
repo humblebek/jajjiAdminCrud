@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     public function index(){
-        $articles =  DB::table('articles')->get();
+         $articles =  DB::table('articles')
+        // ->join('teachers','articles.id','=','teachers.id')
+        ->get();
          return view('admin.articles.index',compact('articles'));
      }
 
@@ -31,7 +33,7 @@ class ArticleController extends Controller
 
          ]);
 
-         return redirect()->route('Aindex');
+         return redirect()->route('admin.articles.index');
      }
 
      public function edit($id){
@@ -47,14 +49,14 @@ class ArticleController extends Controller
             'articleOwner'=>$request->articleOwnerA,
          ]);
 
-         return redirect()->route('Aindex');
+         return redirect()->route('admin.articles.index');
      }
 
 
      public function destroy($id){
          DB::table('articles')->where("id","=",$id)->delete();
 
-         return redirect()->route('Aindex');
+         return redirect()->route('admin.articles.index');
 
      }
 }

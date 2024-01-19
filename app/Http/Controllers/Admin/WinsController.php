@@ -12,14 +12,12 @@ class WinsController extends Controller
         return view('admin.wins.index',compact('wins'));
     }
 
-    public function show($id){
-        $win = DB::table('wins')->find($id);
-        return view('admin.wins.show',compact('win'));
-    }
+
 
     public function create(){
         return view('admin.wins.create');
     }
+
 
     public function store(Request $request){
 
@@ -29,13 +27,23 @@ class WinsController extends Controller
             'message'=>$request->messageW,
         ]);
 
-        return redirect()->route('index');
+        return redirect()->route('admin.wins.index');
     }
+
+
+    public function show($id){
+        $win = DB::table('wins')->find($id);
+        return view('admin.wins.show',compact('win'));
+    }
+
+
 
     public function edit($id){
         $win = DB::table('wins')->find($id);
         return view('admin.wins.edit',compact('win'));
     }
+
+
 
     public function update(Request $request, $id){
         DB::table('wins')->where("id","=",$id)->update([
@@ -44,15 +52,14 @@ class WinsController extends Controller
             'message'=>$request->messageW,
         ]);
 
-        return redirect()->route('index');
+        return redirect()->route('admin.wins.index');
     }
 
 
     public function destroy($id){
         DB::table('wins')->where("id","=",$id)->delete();
 
-        return redirect()->route('index');
-
+        return redirect()->route('admin.wins.index');
     }
 
 
