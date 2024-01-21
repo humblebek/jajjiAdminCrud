@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($wins as $item)
+                    @foreach ($win as $item)
                     <tr>
                         <td><p>{{++$loop->index}}</p></td>
                         <td><p>{{$item->photo}}</p></td>

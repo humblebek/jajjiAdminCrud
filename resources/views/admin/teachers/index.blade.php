@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($teachers as $item)
+                    @foreach ($teacher as $item)
                     <tr>
                         <td><p>{{++$loop->index}}</p></td>
                         <td><p>{{$item->name}}</p></td>

@@ -18,32 +18,32 @@
             <table>
                 <tr>
                     <th>Name:</th>
-                    <td><b>{{$teachers->name}}</b></td>
+                    <td><b>{{$teacher->name}}</b></td>
                 </tr>
                 <tr>
                     <th>Occupation:</th>
-                    <td><b>{{$teachers->occupation}}</b></td>
+                    <td><b>{{$teacher->occupation}}</b></td>
                 </tr>
                 <tr>
                     <th>Status:</th>
-                    <td><b>{{ $teachers->status == 1 ? 'Dean' : 'Teacher' }}</b></td>
+                    <td><b>{{ $teacher->status == 1 ? 'Dean' : 'Teacher' }}</b></td>
                 </tr>
 
                 <tr>
                     <th>Photo:</th>
-                    <td><b>{{$teachers->photo}}</b></td>
+                    <td><b>{{$teacher->photo}}</b></td>
                 </tr>
                 <tr>
                     <th>Telegram:</th>
-                    <td><b>{{$teachers->telegram}}</b></td>
+                    <td><b>{{$teacher->telegram}}</b></td>
                 </tr>
                 <tr>
                     <th>Facebook:</th>
-                    <td><b>{{$teachers->facebook}}</b></td>
+                    <td><b>{{$teacher->facebook}}</b></td>
                 </tr>
                 <tr>
                     <th>Instagram:</th>
-                    <td><b>{{$teachers->instagram}}</b></td>
+                    <td><b>{{$teacher->instagram}}</b></td>
                 </tr>
 
 

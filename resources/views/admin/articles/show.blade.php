@@ -18,19 +18,19 @@
             <table>
                 <tr>
                     <th>Image:</th>
-                    <td><b>{{$articles->photo}}</b></td>
+                    <td><b>{{$article->photo}}</b></td>
                 </tr>
                 <tr>
                     <th>Title:</th>
-                    <td><b>{{$articles->title}}</b></td>
+                    <td><b>{{$article->title}}</b></td>
                 </tr>
                 <tr>
                     <th>Message:</th>
-                    <td><b>{{$articles->message}}</b></td>
+                    <td><b>{{$article->message}}</b></td>
                 </tr>
                 <tr>
                     <th>Article Owner:</th>
-                    <td><b>{{$articles->articleOwner}}</b></td>
+                    <td><b>{{$article->articleOwner}}</b></td>
                 </tr>
 
 

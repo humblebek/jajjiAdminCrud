@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($groups as $item)
+                    @foreach ($group as $item)
                     <tr>
                         <td><p>{{++$loop->index}}</p></td>
                         <td><p>{{$item->photo}}</p></td>

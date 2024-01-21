@@ -1,29 +1,26 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Group;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
     public function index(){
-        $groups =  DB::table('groups')->get();
-         return view('admin.groups.index',compact('groups'));
+        $group =  Group::all();
+         return view('admin.groups.index',compact('group'));
      }
 
-     public function show($id){
-         $groups = DB::table('groups')->find($id);
-         return view('admin.groups.show',compact('groups'));
-     }
 
      public function create(){
          return view('admin.groups.create');
      }
 
+
      public function store(Request $request){
 
-         DB::table('groups')->insert([
+         Group::create([
             'photo'=>$request->imgG,
             'title'=>$request->titleG,
             'message'=>$request->messageG,
@@ -36,13 +33,16 @@ class GroupController extends Controller
          return redirect()->route('admin.groups.index');
      }
 
-     public function edit($id){
-         $groups = DB::table('groups')->find($id);
-         return view('admin.groups.edit',compact('groups'));
+     public function show(Group $group){
+        return view('admin.groups.show',compact('group'));
+    }
+
+     public function edit(Group $group){
+         return view('admin.groups.edit',compact('group'));
      }
 
-     public function update(Request $request, $id){
-         DB::table('groups')->where("id","=",$id)->update([
+     public function update(Request $request, Group $group){
+        $group ->update([
              'photo'=>$request->imgG,
              'title'=>$request->titleG,
              'message'=>$request->messageG,
@@ -56,8 +56,8 @@ class GroupController extends Controller
      }
 
 
-     public function destroy($id){
-         DB::table('groups')->where("id","=",$id)->delete();
+     public function destroy(Group $group){
+        $group->delete();
 
          return redirect()->route('admin.groups.index');
 

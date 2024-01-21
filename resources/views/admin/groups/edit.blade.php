@@ -7,37 +7,37 @@
         <button><a href={{route('admin.groups.index')}}>Back</a></button>
         <h1>Edit Groups</h1>
 
-        <form action="{{route('admin.class.update',$groups->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.groups.update',$group->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div>
                 <p>Image:</p>
-                <input type="text" name="imgG" value="{{$groups->photo}}" placeholder="Name of image..."><br>
+                <input type="text" name="imgG" value="{{$group->photo}}" placeholder="Name of image..."><br>
             </div>
             <div>
                 <p>Title:</p>
-                <input type="text" name="titleG"value="{{$groups->title}}" placeholder="Harry Potter"><br>
+                <input type="text" name="titleG"value="{{$group->title}}" placeholder="Harry Potter"><br>
             </div>
             <div>
                 <p>Message:</p>
-                <input type="text" name="messageG"value="{{$groups->message}}" placeholder="You can write smth here..."><br>
+                <input type="text" name="messageG"value="{{$group->message}}" placeholder="You can write smth here..."><br>
             </div>
             <div>
                 <p>Age:</p>
-                <input type="text" name="AgeG" value="{{$groups->age}}"placeholder="age..."><br>
+                <input type="text" name="AgeG" value="{{$group->age}}"placeholder="age..."><br>
             </div>
             <div>
                 <p>Seat:</p>
-                <input type="number" name="seatG" value="{{$groups->seat}}" placeholder="seat..."><br>
+                <input type="number" name="seatG" value="{{$group->seat}}" placeholder="seat..."><br>
             </div>
             <div>
                 <p>Time:</p>
-                <input type="text" name="lessonTimeG"value="{{$groups->lessonTime}}" placeholder="11:00-12:00"><br>
+                <input type="text" name="lessonTimeG"value="{{$group->lessonTime}}" placeholder="11:00-12:00"><br>
             </div>
             <div>
                 <p>Fee:</p>
-                <input type="number" name="tutionFeeG" value="{{$groups->tutionFee}}" placeholder="100$..."><br>
+                <input type="number" name="tutionFeeG" value="{{$group->tutionFee}}" placeholder="100$..."><br>
             </div>
             <span><input type="submit" name="group" value="SEND"></span>
         </form>

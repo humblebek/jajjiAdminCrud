@@ -1,20 +1,19 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
     public function index(){
-        $teachers =  DB::table('teachers')->get();
-         return view('admin.teachers.index',compact('teachers'));
+        $teacher =  Teacher::all();
+         return view('admin.teachers.index',compact('teacher'));
      }
 
-     public function show($id){
-         $teachers = DB::table('teachers')->find($id);
-         return view('admin.teachers.show',compact('teachers'));
+     public function show(Teacher $teacher){
+         return view('admin.teachers.show',compact('teacher'));
      }
 
      public function create(){
@@ -23,7 +22,7 @@ class TeacherController extends Controller
 
      public function store(Request $request){
 
-         DB::table('teachers')->insert([
+         Teacher::create([
             'name'=>$request->nameT,
             'occupation'=>$request->occupationT,
             'status'=>$request->statusT,
@@ -36,13 +35,12 @@ class TeacherController extends Controller
          return redirect()->route('admin.teachers.index');
      }
 
-     public function edit($id){
-         $teachers = DB::table('teachers')->find($id);
-         return view('admin.teachers.edit',compact('teachers'));
+     public function edit(Teacher $teacher){
+         return view('admin.teachers.edit',compact('teacher'));
      }
 
-     public function update(Request $request, $id){
-         DB::table('teachers')->where("id","=",$id)->update([
+     public function update(Request $request, Teacher $teacher){
+         $teacher->update([
             'name'=>$request->nameT,
             'occupation'=>$request->occupationT,
             'status'=>$request->statusT,
@@ -52,14 +50,14 @@ class TeacherController extends Controller
             'instagram'=>$request->instagram,
          ]);
 
-         return redirect()->route('admin.teachersindex');
+         return redirect()->route('admin.teachers.index');
      }
 
 
-     public function destroy($id){
-         DB::table('teachers')->where("id","=",$id)->delete();
+     public function destroy(Teacher $teacher){
+       $teacher->delete();
 
-         return redirect()->route('admin.teachersindex');
+         return redirect()->route('admin.teachers.index');
 
      }
 }
